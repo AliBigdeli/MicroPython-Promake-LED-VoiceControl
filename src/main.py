@@ -70,21 +70,10 @@ commands_list = {
 
 def sub_callback(topic, msg):
   # print((topic, msg))
-  if msg.decode('utf-8') == 'on':
-    # print("led on")
-    pixel_obj.on()
-  elif msg.decode('utf-8') == 'off':
-    # print("led off")
-    pixel_obj.off()
-  elif msg.decode('utf-8') == 'red':
-    # print("led off")
-    pixel_obj.fill(Colors.red)
-  elif msg.decode('utf-8') == 'green':
-    # print("led off")
-    pixel_obj.fill(Colors.green)
-  elif msg.decode('utf-8') == 'green':
-    # print("led off")
-    pixel_obj.fill(Colors.green)
+  str_msg = msg.decode('utf-8')
+  if str_msg in commands_list:
+    pixel_obj.fill(commands_list[str_msg])
+
 
 def connect_and_subscribe():
   client = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER)
