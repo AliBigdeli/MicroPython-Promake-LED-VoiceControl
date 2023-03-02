@@ -18,6 +18,15 @@ for index, name in enumerate(sr.Microphone.list_microphone_names()):
 # creating a class for key combination and execution by speechrecognition
 
 class Recognizer():
+    commands_list = {
+        'روشن':'on',
+        'خاموش':'off',
+        'آبی':'blue',
+        'سبز':'green',
+        'قرمز':'red'
+    }
+    
+    
     # combinations were needed to call the STT module
     COMBINATIONS = [
         {keyboard.Key.alt_l, keyboard.KeyCode(char='`')},
@@ -53,12 +62,10 @@ class Recognizer():
         text = self.voice_rec()
         # if text == None or text == '':
         #     return
-        if text == "روشن":
-            # print("on")
-            publish.single(topic="promake/led/test", payload="on",hostname="test.mosquitto.org", port=1883)
-        if text == "خاموش":
-            # print("off")
-            publish.single("promake/led/test", "off",hostname="test.mosquitto.org", port=1883)
+        if text in self.commands_list:
+            self.send_msg(self.commands_list[text])
+        else:
+            return None
 
     # voice recognition function based on microphone
     def voice_rec(self):
@@ -88,7 +95,8 @@ class Recognizer():
     def run(self):
         with keyboard.Listener(on_press=self.on_press, on_release=self.on_release) as listener:
             listener.join()
-
+    def send_msg(self,payload):
+        publish.single("promake/led/test", payload,hostname="test.mosquitto.org", port=1883)
 
 if __name__ == '__main__':
     # https://cloud.google.com/speech-to-text/docs/language

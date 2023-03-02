@@ -13,8 +13,8 @@ MQTT_USER      = ""
 MQTT_PASSWORD  = ""
 MQTT_TOPIC     = "promake/led/test"
 
-WIFI_SSID = "wifi-ssid"
-WIFI_PASSWORD = "wifi-password"
+WIFI_SSID = "BlackFox"
+WIFI_PASSWORD = "@li9214970398"
 
 class Colors:
   yellow = (255, 100, 0)
@@ -59,6 +59,14 @@ while not wlan.isconnected():
   time.sleep(1)
 print(" Connected!")
 
+commands_list = {
+        'on':Colors.white,
+        'off':Colors.black,
+        'blue':Colors.blue,
+        'green':Colors.green,
+        'red':Colors.red,
+    }
+
 
 def sub_callback(topic, msg):
   # print((topic, msg))
@@ -68,6 +76,15 @@ def sub_callback(topic, msg):
   elif msg.decode('utf-8') == 'off':
     # print("led off")
     pixel_obj.off()
+  elif msg.decode('utf-8') == 'red':
+    # print("led off")
+    pixel_obj.fill(Colors.red)
+  elif msg.decode('utf-8') == 'green':
+    # print("led off")
+    pixel_obj.fill(Colors.green)
+  elif msg.decode('utf-8') == 'green':
+    # print("led off")
+    pixel_obj.fill(Colors.green)
 
 def connect_and_subscribe():
   client = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER)
