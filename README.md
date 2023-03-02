@@ -105,6 +105,11 @@ now there are two keywords which the code is listening to:
 
 - روشن
 - خاموش
+- آبی
+- قرمز 
+- سبز
+- زرد
+- نارنجی
 
 which means in order to set the light on you have to say the first  keyword, then a message will be published through mqtt to the corresponding subscriber and the raspberry will change the led state to On. and if you say the second keyword it will be otherwise.
 
