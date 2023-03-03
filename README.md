@@ -1,7 +1,7 @@
 <h1 align="center">MicroPython ProMake Rasp Pico LED VoiceControl</h1>
 
 
-<div align="center" ><a href="https://easy-iot.ir"><img loading="lazy" style="width:700px" src="./docs/giga-pardaz-demo.gif"></a></div>
+<div align="center" ><a href="https://easy-iot.ir"><img loading="lazy" style="width:700px" src="./docs/promake-demo.jpg"></a></div>
 
 <h3 align="center">Brief Sample to control raspberry pico w with google voice assistant (SpeechRecognition) through mqtt</h3>
 <p align="center">
@@ -13,6 +13,7 @@
 
 ### Overview
 - [Features](#features)
+- [Easy-Iot (GigaPardaz) - EasyIot](#easy-iot-gigapardaz---easyiot)
 - [Assemble](#assemble)
 - [Setup PicoW](#setup-picow)
 - [Setup Thonny](#setup-thonny)
@@ -24,12 +25,17 @@
 - [Bugs or Opinion](#bugs-or-opinion)
 
 
-
 # Features
 - MicroPython
 - NeoPixel
 - uMqtt
 - Raspberry Pico W
+
+# Easy-Iot (GigaPardaz) - [EasyIot](https://easy-iot.ir/)
+
+
+<div align="center" ><a href="https://easy-iot.ir"><img loading="lazy" style="width:700px" src="./docs/giga-pardaz-demo.gif"></a></div>
+
 
 
 # Assemble
