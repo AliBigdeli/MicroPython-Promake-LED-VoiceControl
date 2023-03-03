@@ -23,7 +23,9 @@ class Recognizer():
         'خاموش':'off',
         'آبی':'blue',
         'سبز':'green',
-        'قرمز':'red'
+        'قرمز':'red',
+        'نارنجی':'orange',
+        'زرد':'yellow'
     }
     
     

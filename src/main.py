@@ -65,6 +65,8 @@ commands_list = {
         'blue':Colors.blue,
         'green':Colors.green,
         'red':Colors.red,
+        'yellow':Colors.yellow,
+        'orange':Colors.orange
     }
 
 
